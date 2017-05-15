@@ -1,7 +1,7 @@
 {
   "name": "js-editable.angular",
   "description": "dynamic editable html contents with angular javascript",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "main": "./dist/js-editable-angular.min.js",
   "authors": [
     "Alan <alan.da.silva.ferreira@hotmail.com>"

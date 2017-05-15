@@ -5,16 +5,16 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./dist/js-editable.min.css" rel="stylesheet">
+    <link href="http://rawgit.com/alansferreira/js-editable.jquery/master/dist/js-editable.min.css" rel="stylesheet">
 </head>
 
 <body ng-app="app">
     <div ng-controller="ctrl">
         <table>
             <tr ng-repeat="r in data.rows">
-                <td ng-editable edt-value="r.cell1" edt-input="'.custom-input'" edt-auto-update="false"  edt-on-commit="commit">{{r.cell1}}</td>
-                <td ng-editable edt-value="r.cell2" edt-input="'.custom-input'">{{r.cell2}}</td>
-                <td ng-editable edt-value="r.cell3" edt-input="'.custom-input'">{{r.cell3}}</td>
+                <td editable edt-value="r.cell1" edt-input="'#edt-input-text'" edt-auto-update="false"  edt-on-commit="commit">{{r.cell1}}</td>
+                <td editable edt-value="r.cell2" edt-input="'#edt-input-text'">{{r.cell2}}</td>
+                <td editable edt-value="r.cell3" edt-input="'#edt-input-select'">{{r.cell3}}</td>
             </tr>
         </table>
     </div>
@@ -24,17 +24,21 @@
             background-color: gray;
         }
     </style>
-    <input class="custom-input"/>
+    <input id="edt-input-text"/>
+    <select id="edt-input-select">
+        <option value="v1">value 1</option>
+        <option value="v2">value 2</option>
+        <option value="v3">value 3</option>
+    </select>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <!--<script src="./dist/js-editable.min.js"></script>-->
-    <script src="./js-editable.jquery.js"></script>
-    <script src="./js-editable.angular.js"></script>
+    <script src="http://rawgit.com/alansferreira/js-editable.jquery/master/dist/js-editable-jquery.min.js"></script>
+    <script src="./js-editable-angular.js"></script>
     
     <script>
-        var app = angular.module('app', []);
-        registerEditableDirective(app);
+        var app = angular.module('app', ['ngEditable']);
+        //registerEditableDirective(app);
 
         var ctrl = app.controller('ctrl', function($scope){
             $scope.data = {

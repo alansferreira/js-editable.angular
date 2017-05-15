@@ -24,7 +24,7 @@ SOFTWARE.
 
 var ngEditable = angular.module('ngEditable', []);
 
-ngEditable.directive('editable', function () {
+ngEditable.directive('editable', function ($parse) {
   return {
     restrict: 'A',
     scope: {
@@ -54,4 +54,8 @@ ngEditable.directive('editable', function () {
   };
 });
 
-if(module && module.exports) module.exports = ngEditable;
+try {
+  module.exports = ngEditable;
+} catch (error) {
+  
+}
