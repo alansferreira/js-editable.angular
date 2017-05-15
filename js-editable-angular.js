@@ -22,7 +22,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-var ngEditable = angular.module('ngEditable', []);
+var ngEditable = null;
+
+try {
+  if(angular==undefined){
+    ngEditable = require('angular').module('ngEditable', []);
+  }else{
+    ngEditable = angular.module('ngEditable', []);
+  }
+} catch (error) {
+  
+}
 
 ngEditable.directive('editable', function ($parse) {
   return {
