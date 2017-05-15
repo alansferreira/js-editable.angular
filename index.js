@@ -1,1 +1,1 @@
-if(require && module && module.exports) module.exports = require('./js-editable.jquery');
+if(require && module && module.exports) module.exports = require('./js-editable-angular');
