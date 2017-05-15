@@ -1,6 +1,6 @@
 {
   "name": "js-editable.angular",
-  "version": "1.2.18",
+  "version": "1.2.21",
   "description": "dynamic editable html contents with angualar javascript",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "dependencies": {
     "jquery": "3.2.1", 
     "angular": "1.6.4", 
-    "js-editable.jquery": "1.2.16"
+    "js-editable.jquery": "^1.2.17"
   },
   "devDependencies": {
     "gulp": "3.9.1",
