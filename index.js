@@ -1,6 +1,6 @@
 try {
     
-    if(require && module && module.exports) return null;
+    if(!(require && module && module.exports)) return null;
     
     module.exports = require('./js-editable-angular');
     
