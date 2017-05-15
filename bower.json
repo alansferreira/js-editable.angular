@@ -1,0 +1,21 @@
+{
+  "name": "js-editable.angular",
+  "description": "dynamic editable html contents with angular javascript",
+  "version": "1.2.12",
+  "main": "./dist/js-editable-angular.min.js",
+  "authors": [
+    "Alan <alan.da.silva.ferreira@hotmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/alansferreira/js-editable.angular",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ], 
+  "dependencies": {
+    "jquery": "latest"
+  }
+}

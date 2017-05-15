@@ -1,3 +1,4 @@
+/*
 MIT License
 
 Copyright (c) 2017 Alan
@@ -19,3 +20,38 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+
+var ngEditable = angular.module('ngEditable', []);
+
+ngEditable.directive('editable', function () {
+  return {
+    restrict: 'A',
+    scope: {
+      edtValue: '@',
+      edtAutoUpdate: '&edtAutoUpdate',
+      edtAutoMetrics: '&edtAutoMetrics',
+      edtInfiniteNavigation: '&edtInfiniteNavigation',
+      edtOnCommit: '&edtOnCommit',
+      edtInput: '&edtInput'
+    },
+
+    link: function (scope, element) {
+      var options = {
+        edtAutoUpdate: scope.edtAutoUpdate(),
+        edtAutoMetrics: scope.edtAutoMetrics(),
+        edtInfiniteNavigation: scope.edtInfiniteNavigation(),
+        edtOnCommit: _onCommit,
+        edtInput: scope.edtInput()
+      }
+      function _onCommit() {
+        scope.$apply(function () { $parse(scope.edtValue).assign(scope.$parent, $(scope.edtInput()).val()); });
+        if (scope.edtOnCommit()) scope.edtOnCommit()();
+      }
+
+      $(element).editable(options);
+    },
+  };
+});
+
+if(module && module.exports) module.exports = ngEditable;
