@@ -1,6 +1,6 @@
 {
   "name": "js-editable.angular",
-  "version": "1.2.22",
+  "version": "1.2.23",
   "description": "dynamic editable html contents with angualar javascript",
   "main": "index.js",
   "scripts": {

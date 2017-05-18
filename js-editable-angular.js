@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 var ngEditable = null;
-var $ = require("jquery")(window);
+var $ = require("jquery");
 
 try {
   if(angular==undefined){
